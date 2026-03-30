@@ -1,0 +1,626 @@
+{
+  "id": "f19cc7d6-9844-4e5f-8cf4-730eb604bffd",
+  "revision": 0,
+  "last_node_id": 8,
+  "last_link_id": 12,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Note",
+      "pos": [
+        20,
+        20
+      ],
+      "size": [
+        470,
+        230
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": "",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "1. 这是可直接运行的 TY 图生视频工作流。\n2. 为了保证拖入后能直接运行，这里先用 TY 文生图节点生成一张参考图，再送入 TY 图生视频节点。\n3. 如果你想换成自己的图，只要把 Generate Image 删掉，并把外部图片接到 TY LTX Desktop Generate Video 的 image 输入。"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 2,
+      "type": "TYLTXDesktopConfig",
+      "pos": [
+        20,
+        290
+      ],
+      "size": [
+        360,
+        250
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "base_url",
+          "name": "base_url",
+          "type": "STRING",
+          "widget": {
+            "name": "base_url"
+          },
+          "link": null
+        },
+        {
+          "label": "launcher_root",
+          "name": "launcher_root",
+          "type": "STRING",
+          "widget": {
+            "name": "launcher_root"
+          },
+          "link": null
+        },
+        {
+          "label": "auto_start",
+          "name": "auto_start",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "auto_start"
+          },
+          "link": null
+        },
+        {
+          "label": "output_dir",
+          "name": "output_dir",
+          "type": "STRING",
+          "widget": {
+            "name": "output_dir"
+          },
+          "link": null
+        },
+        {
+          "label": "gpu_id",
+          "name": "gpu_id",
+          "type": "INT",
+          "widget": {
+            "name": "gpu_id"
+          },
+          "link": null
+        },
+        {
+          "label": "clear_gpu_before_run",
+          "name": "clear_gpu_before_run",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "clear_gpu_before_run"
+          },
+          "link": null
+        },
+        {
+          "label": "health_timeout_s",
+          "name": "health_timeout_s",
+          "type": "INT",
+          "widget": {
+            "name": "health_timeout_s"
+          },
+          "link": null
+        },
+        {
+          "label": "request_timeout_s",
+          "name": "request_timeout_s",
+          "type": "INT",
+          "widget": {
+            "name": "request_timeout_s"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "slot_index": 0,
+          "links": [
+            7,
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TYLTXDesktopConfig",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "http://127.0.0.1:3000",
+        "C:/path/to/LTX_launcher_project",
+        true,
+        "",
+        -1,
+        false,
+        60,
+        1800
+      ]
+    },
+    {
+      "id": 5,
+      "type": "TYLTXDesktopSaveVideo",
+      "pos": [
+        1420,
+        310
+      ],
+      "size": [
+        360,
+        752.5454545454545
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 5
+        },
+        {
+          "label": "video_path",
+          "name": "video_path",
+          "type": "STRING",
+          "widget": {
+            "name": "video_path"
+          },
+          "link": 9
+        },
+        {
+          "label": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "label": "target_dir",
+          "name": "target_dir",
+          "type": "STRING",
+          "widget": {
+            "name": "target_dir"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "saved_video_path",
+          "name": "saved_video_path",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TYLTXDesktopSaveVideo",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "video_path": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ty_ltx_image_to_video",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "TYLTXDesktopGenerateVideo",
+      "pos": [
+        900,
+        260
+      ],
+      "size": [
+        400,
+        462
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 7
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 12
+        },
+        {
+          "label": "start_frame",
+          "name": "start_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "end_frame",
+          "name": "end_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "ref_audio",
+          "name": "ref_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "resolution",
+          "name": "resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "label": "aspect_ratio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "label": "duration",
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": null
+        },
+        {
+          "label": "fps",
+          "name": "fps",
+          "type": "COMBO",
+          "widget": {
+            "name": "fps"
+          },
+          "link": null
+        },
+        {
+          "label": "seed_mode",
+          "name": "seed_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "seed_mode"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "label": "camera_motion",
+          "name": "camera_motion",
+          "type": "COMBO",
+          "widget": {
+            "name": "camera_motion"
+          },
+          "link": null
+        },
+        {
+          "label": "audio",
+          "name": "audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "audio"
+          },
+          "link": null
+        },
+        {
+          "label": "negative_prompt",
+          "name": "negative_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "audio_path",
+          "name": "audio_path",
+          "type": "STRING",
+          "widget": {
+            "name": "audio_path"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "video_path",
+          "name": "video_path",
+          "type": "STRING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TYLTXDesktopGenerateVideo",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "模特展示她漂亮的耳环",
+        "720p (720P 标准)",
+        "9:16 (竖屏)",
+        5,
+        "24",
+        "fixed (固定种子)",
+        1361334126,
+        "randomize",
+        "static (静止机位)",
+        true,
+        "low quality, blurry, noisy, static noise, distorted",
+        ""
+      ]
+    },
+    {
+      "id": 6,
+      "type": "PreviewImage",
+      "pos": [
+        432.6491063377457,
+        610.0560402199314
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.1",
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "TYLTXDesktopGenerateImage",
+      "pos": [
+        415.29392547631073,
+        323.7701114513306
+      ],
+      "size": [
+        400,
+        228
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 10
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "preset",
+          "name": "preset",
+          "type": "COMBO",
+          "widget": {
+            "name": "preset"
+          },
+          "link": null
+        },
+        {
+          "label": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "label": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "label": "num_steps",
+          "name": "num_steps",
+          "type": "INT",
+          "widget": {
+            "name": "num_steps"
+          },
+          "link": null
+        },
+        {
+          "label": "num_images",
+          "name": "num_images",
+          "type": "INT",
+          "widget": {
+            "name": "num_images"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            11,
+            12
+          ]
+        },
+        {
+          "label": "image_paths_json",
+          "name": "image_paths_json",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "Node name for S&R": "TYLTXDesktopGenerateImage"
+      },
+      "widgets_values": [
+        "带着宝石项链和耳饰的女模特，中国18岁女孩拥有曼妙的身姿，半身像。",
+        "9:16 Portrait (720x1280)",
+        1024,
+        1024,
+        28,
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      5,
+      2,
+      0,
+      5,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      7,
+      2,
+      0,
+      7,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      9,
+      7,
+      0,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      10,
+      2,
+      0,
+      8,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      11,
+      8,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      8,
+      0,
+      7,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 1.4272013898876472,
+      "offset": [
+        -381.0626269497318,
+        -127.75185091929853
+      ]
+    },
+    "frontendVersion": "1.42.8",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

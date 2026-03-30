@@ -1,0 +1,133 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Note",
+      "pos": [20, 20],
+      "size": [470, 230],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "properties": {"text": ""},
+      "title": "使用说明",
+      "widgets_values": [
+        "1. 这是可直接运行的 TY 视频超分工作流。\n2. 为了保证拖入后能直接运行，这里先生成一个基础视频，再把它送进 TY 视频超分节点。\n3. 如果你有自己的本地视频，也可以删掉前面的 Generate Video，直接在 TY LTX Desktop Upscale Video 里填 video_path。"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 2,
+      "type": "TYLTXDesktopConfig",
+      "pos": [20, 290],
+      "size": [360, 250],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {"name": "config", "type": "LTX_DESKTOP_CONFIG", "links": [1, 2, 4], "shape": 3, "slot_index": 0}
+      ],
+      "properties": {"Node name for S&R": "TYLTXDesktopConfig"},
+      "widgets_values": [
+        "http://127.0.0.1:3000",
+        "C:/path/to/LTX_launcher_project",
+        true,
+        "",
+        -1,
+        false,
+        60,
+        1800
+      ]
+    },
+    {
+      "id": 3,
+      "type": "TYLTXDesktopGenerateVideo",
+      "pos": [430, 250],
+      "size": [460, 440],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {"name": "config", "type": "LTX_DESKTOP_CONFIG", "link": 1},
+        {"name": "image", "type": "IMAGE", "link": null},
+        {"name": "start_frame", "type": "IMAGE", "link": null},
+        {"name": "end_frame", "type": "IMAGE", "link": null},
+        {"name": "ref_audio", "type": "AUDIO", "link": null}
+      ],
+      "outputs": [
+        {"name": "video_path", "type": "STRING", "links": [3], "shape": 3, "slot_index": 0}
+      ],
+      "properties": {"Node name for S&R": "TYLTXDesktopGenerateVideo"},
+      "widgets_values": [
+        "A cinematic wide shot of a luxury modern building with smooth forward camera motion and realistic sunlight",
+        "720p (720P 标准)",
+        "16:9 (横屏)",
+        5,
+        "24",
+        "fixed (固定种子)",
+        123456789,
+        "dolly_in (推进)",
+        true,
+        "low quality, blurry, noisy, static noise, distorted",
+        ""
+      ]
+    },
+    {
+      "id": 4,
+      "type": "TYLTXDesktopUpscaleVideo",
+      "pos": [970, 310],
+      "size": [430, 220],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {"name": "config", "type": "LTX_DESKTOP_CONFIG", "link": 2},
+        {"name": "video_path", "type": "STRING", "link": 3}
+      ],
+      "outputs": [
+        {"name": "video_path", "type": "STRING", "links": [5], "shape": 3, "slot_index": 0}
+      ],
+      "properties": {"Node name for S&R": "TYLTXDesktopUpscaleVideo"},
+      "widgets_values": [
+        "",
+        "1080p (1080P 高清)",
+        "high quality, detailed, 4k, sharp textures, cinematic finish",
+        0.7
+      ]
+    },
+    {
+      "id": 5,
+      "type": "TYLTXDesktopSaveVideo",
+      "pos": [1460, 310],
+      "size": [360, 220],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {"name": "config", "type": "LTX_DESKTOP_CONFIG", "link": 4},
+        {"name": "video_path", "type": "STRING", "link": 5}
+      ],
+      "outputs": [
+        {"name": "saved_video_path", "type": "STRING", "links": null, "shape": 3, "slot_index": 0}
+      ],
+      "properties": {"Node name for S&R": "TYLTXDesktopSaveVideo"},
+      "widgets_values": [
+        "ty_ltx_upscale_video",
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [1, 2, 0, 3, 0, "LTX_DESKTOP_CONFIG"],
+    [2, 2, 0, 4, 0, "LTX_DESKTOP_CONFIG"],
+    [3, 3, 0, 4, 1, "STRING"],
+    [4, 2, 0, 5, 0, "LTX_DESKTOP_CONFIG"],
+    [5, 4, 0, 5, 1, "STRING"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
