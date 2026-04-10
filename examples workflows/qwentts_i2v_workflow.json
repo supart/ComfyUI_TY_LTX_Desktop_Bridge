@@ -1,0 +1,1639 @@
+{
+  "id": "408a963f-d7c1-40ca-b65d-ead57ba3fa0e",
+  "revision": 0,
+  "last_node_id": 61,
+  "last_link_id": 79,
+  "nodes": [
+    {
+      "id": 39,
+      "type": "Note",
+      "pos": [
+        1342.4513818055477,
+        507.269899206148
+      ],
+      "size": [
+        550.7104057729439,
+        221.73219243000534
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Before running this workflow, make sure your local LTX Desktop backend already works.\n\nThis plugin is a bridge layer only. It does not install or replace the desktop application."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        -533.4248451687088,
+        -636.7332089133942
+      ],
+      "size": [
+        2786.035030469104,
+        88
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "免费开源，禁止倒卖。\nFree and open-source. Do not resell."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 38,
+      "type": "Note",
+      "pos": [
+        1341.2392490669797,
+        254.83796864147055
+      ],
+      "size": [
+        551.7708389368386,
+        194.1609301687471
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "运行工作流前必须自己跑通大雄的LTX桌面端视频插件，未跑通也用不了我的插件。\n\n【12G显存可用，LTX2.3免费开源AI视频软件，支持LoRA、首尾帧、智能多帧、对口型、图生视频、文生视频，一键安装运行】 https://www.bilibili.com/video/BV1MLSUB3EZx/\n\n【LTX多功能AI视频生成软件，生成速度是ComfyUI的5倍，无时长限制，集成首尾帧、文生视频、图生视频、参考音频对口型等功能，AI编程插件，一键运行】 https://www.bilibili.com/video/BV1P3XSBCEPy/"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 46,
+      "type": "SaveAudioMP3",
+      "pos": [
+        197.6943799802828,
+        1237.1976958005175
+      ],
+      "size": [
+        400.11316058609145,
+        136
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 65
+        },
+        {
+          "label": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "label": "quality",
+          "name": "quality",
+          "type": "COMBO",
+          "widget": {
+            "name": "quality"
+          },
+          "link": null
+        },
+        {
+          "label": "audioUI",
+          "name": "audioUI",
+          "type": "AUDIO_UI",
+          "widget": {
+            "name": "audioUI"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.17.1",
+        "Node name for S&R": "SaveAudioMP3"
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        "V0"
+      ]
+    },
+    {
+      "id": 47,
+      "type": "AudioConcat",
+      "pos": [
+        438.23751008530456,
+        939.4091376242909
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "audio1",
+          "name": "audio1",
+          "type": "AUDIO",
+          "link": 66
+        },
+        {
+          "label": "audio2",
+          "name": "audio2",
+          "type": "AUDIO",
+          "link": 67
+        },
+        {
+          "label": "direction",
+          "name": "direction",
+          "type": "COMBO",
+          "widget": {
+            "name": "direction"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "AUDIO",
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            65,
+            69,
+            75
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.17.0",
+        "Node name for S&R": "AudioConcat"
+      },
+      "widgets_values": [
+        "after"
+      ]
+    },
+    {
+      "id": 48,
+      "type": "FB_Qwen3TTSVoiceDesign",
+      "pos": [
+        -378.44398347451465,
+        1005.3794854612572
+      ],
+      "size": [
+        522.5233505515866,
+        591.364134086918
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "shape": 7,
+          "type": "TTS_CONFIG",
+          "link": null
+        },
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 68
+        },
+        {
+          "label": "instruct",
+          "name": "instruct",
+          "type": "STRING",
+          "widget": {
+            "name": "instruct"
+          },
+          "link": null
+        },
+        {
+          "label": "model_choice",
+          "name": "model_choice",
+          "type": "COMBO",
+          "widget": {
+            "name": "model_choice"
+          },
+          "link": null
+        },
+        {
+          "label": "device",
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "label": "precision",
+          "name": "precision",
+          "type": "COMBO",
+          "widget": {
+            "name": "precision"
+          },
+          "link": null
+        },
+        {
+          "label": "language",
+          "name": "language",
+          "type": "COMBO",
+          "widget": {
+            "name": "language"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "label": "max_new_tokens",
+          "name": "max_new_tokens",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "max_new_tokens"
+          },
+          "link": null
+        },
+        {
+          "label": "top_p",
+          "name": "top_p",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "top_p"
+          },
+          "link": null
+        },
+        {
+          "label": "top_k",
+          "name": "top_k",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "top_k"
+          },
+          "link": null
+        },
+        {
+          "label": "temperature",
+          "name": "temperature",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          },
+          "link": null
+        },
+        {
+          "label": "repetition_penalty",
+          "name": "repetition_penalty",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "repetition_penalty"
+          },
+          "link": null
+        },
+        {
+          "label": "attention",
+          "name": "attention",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "attention"
+          },
+          "link": null
+        },
+        {
+          "label": "unload_model_after_generate",
+          "name": "unload_model_after_generate",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "unload_model_after_generate"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            71
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.7",
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "qwen3-tts-comfyui",
+        "ver": "17207f8b9d1e2e92cb5cf0e487222656757bedf5",
+        "Node name for S&R": "FB_Qwen3TTSVoiceDesign",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "",
+        "角色姓名：林怀岳\n音色信息：年轻低沉，力度感强的男性声音。\n身份背景：国家级权威媒体首席播音主持、资深时政科技记者，年近花甲的新闻界泰斗。深耕新闻一线四十余载，亲历国家重大历史节点与科技腾飞全程，从重大工程奠基到科技突破发布，每一次关键现场都有他的身影。现任国家级媒体新闻顾问、播音指导委员会终身荣誉委员，至今仍坚守采编与播音一线，深耕科技领域深度报道，悉心培育青年新闻人才，以专业笔触与声音传递国家声音、讲好中国创新故事。\n人生信条：“我们这一代人，不是为了站在光里，而是为了把路铺到光里。”",
+        "1.7B",
+        "auto",
+        "bf16",
+        "Chinese",
+        572411902736217,
+        "fixed",
+        2048,
+        0.8,
+        20,
+        1,
+        1.05,
+        "auto",
+        false
+      ]
+    },
+    {
+      "id": 49,
+      "type": "EmptyAudio",
+      "pos": [
+        155.9973166560739,
+        945.5802163349881
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "duration",
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": null
+        },
+        {
+          "label": "sample_rate",
+          "name": "sample_rate",
+          "type": "INT",
+          "widget": {
+            "name": "sample_rate"
+          },
+          "link": null
+        },
+        {
+          "label": "channels",
+          "name": "channels",
+          "type": "INT",
+          "widget": {
+            "name": "channels"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "AUDIO",
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            67
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.17.0",
+        "Node name for S&R": "EmptyAudio"
+      },
+      "widgets_values": [
+        1,
+        44100,
+        2
+      ]
+    },
+    {
+      "id": 50,
+      "type": "PreviewAudio",
+      "pos": [
+        174.71786320049665,
+        1106.5502343451703
+      ],
+      "size": [
+        457.3058361251674,
+        88
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "音频",
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 69
+        },
+        {
+          "label": "audioUI",
+          "name": "audioUI",
+          "type": "AUDIO_UI",
+          "widget": {
+            "name": "audioUI"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "version": "7.7",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.16.4",
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 51,
+      "type": "AudioConcat",
+      "pos": [
+        440.45647806470834,
+        783.033930212199
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "audio1",
+          "name": "audio1",
+          "type": "AUDIO",
+          "link": 70
+        },
+        {
+          "label": "audio2",
+          "name": "audio2",
+          "type": "AUDIO",
+          "link": 71
+        },
+        {
+          "label": "direction",
+          "name": "direction",
+          "type": "COMBO",
+          "widget": {
+            "name": "direction"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "AUDIO",
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            66
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.17.0",
+        "Node name for S&R": "AudioConcat"
+      },
+      "widgets_values": [
+        "after"
+      ]
+    },
+    {
+      "id": 52,
+      "type": "Note",
+      "pos": [
+        323.2100374526729,
+        366.7262354641826
+      ],
+      "size": [
+        495.25525612404545,
+        190.31759554115047
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "基础设置（必填）：\nlauncher_root 填写 LTX Desktop 的 run.bat 所在路径，例如：\nD:/LTX2.3-1.0.4\n也可以先留空，手动启动桌面端\n\nauto_start 打开才能自动运行桌面端\n\n简单理解（不需修改）：\n\nhealth_timeout_s = 等桌面端启动/连通的耐心值\nrequest_timeout_s = 等一次生成任务完成的耐心值\n它们不会改变画质、显存策略或生成效果，只控制“等多久才算超时”。\n\nPublic example:\nLeave `launcher_root` empty if you start LTX Desktop manually.\nEnable `auto_start` only when you want ComfyUI to launch it for you."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 53,
+      "type": "Note",
+      "pos": [
+        856.9720086777879,
+        264.6600383014368
+      ],
+      "size": [
+        315.4534871170986,
+        171.73985817897096
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "可用最高显存上限 (GB, 0为全开优先显存)\n0 = 全开、偏性能\n正数 = 限额、偏省显存\n\napply_now：意思是“现在立刻下发到桌面端生效”。你想马上改当前运行环境，就开 true\n\nlow_vram_mode：开启低显存模式以最低显存运行，直接覆盖上面显存输入的限制参数。\n\nVRAM note:\n`vram_limit_gb = 0` means unlimited prefetch.\n`low_vram_mode = true` takes priority over the numeric limit."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 55,
+      "type": "EmptyAudio",
+      "pos": [
+        159.1783202874189,
+        765.6342192281179
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "duration",
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": null
+        },
+        {
+          "label": "sample_rate",
+          "name": "sample_rate",
+          "type": "INT",
+          "widget": {
+            "name": "sample_rate"
+          },
+          "link": null
+        },
+        {
+          "label": "channels",
+          "name": "channels",
+          "type": "INT",
+          "widget": {
+            "name": "channels"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "AUDIO",
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            70
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.17.0",
+        "Node name for S&R": "EmptyAudio"
+      },
+      "widgets_values": [
+        1,
+        44100,
+        2
+      ]
+    },
+    {
+      "id": 57,
+      "type": "LoadImage",
+      "pos": [
+        -383.34038196811724,
+        26.405974051827513
+      ],
+      "size": [
+        553.1594671657501,
+        550.532967380039
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "label": "upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            74
+          ]
+        },
+        {
+          "label": "遮罩",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3",
+        "Node name for S&R": "LoadImage",
+        "hasSecondTab": false,
+        "widget_ue_connectable": {},
+        "secondTabText": "Send Back",
+        "enableTabs": false,
+        "secondTabOffset": 80,
+        "tabWidth": 65,
+        "secondTabWidth": 65,
+        "tabXOffset": 10
+      },
+      "widgets_values": [
+        "cat_announcer.png",
+        "image"
+      ]
+    },
+    {
+      "id": 58,
+      "type": "easy positive",
+      "pos": [
+        -368.93480610571874,
+        738.2581826454941
+      ],
+      "size": [
+        487.41345004818334,
+        211.31465047290806
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "STRING",
+          "widget": {
+            "name": "positive"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "正面提示词",
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            68
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.7"
+        },
+        "cnr_id": "comfyui-easy-use",
+        "ver": "d60b61d5759b020eff3356b3d395a1adb5456869",
+        "Node name for S&R": "easy positive"
+      },
+      "widgets_values": [
+        "最新龙虾安全预警！\nAI 智能体 OpenClaw 风险拉满\n官方建议：安全用机，远离风险！"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 60,
+      "type": "TYLTXDesktopSaveVideo",
+      "pos": [
+        1164.768565899478,
+        1028.5093877252239
+      ],
+      "size": [
+        491.36742152065733,
+        556.4441308150246
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 76
+        },
+        {
+          "label": "video_path",
+          "name": "video_path",
+          "type": "STRING",
+          "widget": {
+            "name": "video_path"
+          },
+          "link": 77
+        },
+        {
+          "label": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "label": "target_dir",
+          "name": "target_dir",
+          "type": "STRING",
+          "widget": {
+            "name": "target_dir"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "saved_video_path",
+          "name": "saved_video_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopSaveVideo"
+      },
+      "widgets_values": [
+        "",
+        "qwentts_i2v",
+        ""
+      ]
+    },
+    {
+      "id": 61,
+      "type": "TYLTXDesktopSetVramLimit",
+      "pos": [
+        858.8662439693926,
+        64.10523270597739
+      ],
+      "size": [
+        312.5455078125,
+        146
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 78
+        },
+        {
+          "label": "vram_limit_gb",
+          "name": "vram_limit_gb",
+          "type": "STRING",
+          "widget": {
+            "name": "vram_limit_gb"
+          },
+          "link": null
+        },
+        {
+          "label": "apply_now",
+          "name": "apply_now",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "apply_now"
+          },
+          "link": null
+        },
+        {
+          "label": "low_vram_mode",
+          "name": "low_vram_mode",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "low_vram_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "links": [
+            72,
+            73
+          ]
+        },
+        {
+          "label": "vram_limit_gb",
+          "name": "vram_limit_gb",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "label": "status_json",
+          "name": "status_json",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopSetVramLimit"
+      },
+      "widgets_values": [
+        "0",
+        true,
+        true
+      ]
+    },
+    {
+      "id": 56,
+      "type": "TYLTXDesktopConfig",
+      "pos": [
+        315.24146334245523,
+        61.55498642764132
+      ],
+      "size": [
+        505.95611295414585,
+        250
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "base_url",
+          "name": "base_url",
+          "type": "STRING",
+          "widget": {
+            "name": "base_url"
+          },
+          "link": null
+        },
+        {
+          "label": "launcher_root",
+          "name": "launcher_root",
+          "type": "STRING",
+          "widget": {
+            "name": "launcher_root"
+          },
+          "link": null
+        },
+        {
+          "label": "auto_start",
+          "name": "auto_start",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "auto_start"
+          },
+          "link": null
+        },
+        {
+          "label": "output_dir",
+          "name": "output_dir",
+          "type": "STRING",
+          "widget": {
+            "name": "output_dir"
+          },
+          "link": null
+        },
+        {
+          "label": "gpu_id",
+          "name": "gpu_id",
+          "type": "INT",
+          "widget": {
+            "name": "gpu_id"
+          },
+          "link": null
+        },
+        {
+          "label": "clear_gpu_before_run",
+          "name": "clear_gpu_before_run",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "clear_gpu_before_run"
+          },
+          "link": null
+        },
+        {
+          "label": "low_vram_mode",
+          "name": "low_vram_mode",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "low_vram_mode"
+          },
+          "link": null
+        },
+        {
+          "label": "health_timeout_s",
+          "name": "health_timeout_s",
+          "type": "INT",
+          "widget": {
+            "name": "health_timeout_s"
+          },
+          "link": null
+        },
+        {
+          "label": "request_timeout_s",
+          "name": "request_timeout_s",
+          "type": "INT",
+          "widget": {
+            "name": "request_timeout_s"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "links": [
+            78
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopConfig"
+      },
+      "widgets_values": [
+        "http://127.0.0.1:3000",
+        "",
+        true,
+        "",
+        -1,
+        false,
+        false,
+        60,
+        1800
+      ]
+    },
+    {
+      "id": 54,
+      "type": "TYLTXDesktopClearGPU",
+      "pos": [
+        1175.8654026237155,
+        938.9270309345171
+      ],
+      "size": [
+        343.68547768783856,
+        46
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "links": [
+            76
+          ]
+        },
+        {
+          "label": "status_json",
+          "name": "status_json",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopClearGPU"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 59,
+      "type": "TYLTXDesktopGenerateVideo",
+      "pos": [
+        795.4465362628405,
+        923.4570115480532
+      ],
+      "size": [
+        313.2623046875,
+        626
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 73
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 74
+        },
+        {
+          "label": "start_frame",
+          "name": "start_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "end_frame",
+          "name": "end_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "ref_audio",
+          "name": "ref_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 75
+        },
+        {
+          "label": "keyframe_images",
+          "name": "keyframe_images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "resolution",
+          "name": "resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "label": "aspect_ratio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "label": "duration",
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": null
+        },
+        {
+          "label": "fps",
+          "name": "fps",
+          "type": "COMBO",
+          "widget": {
+            "name": "fps"
+          },
+          "link": null
+        },
+        {
+          "label": "seed_mode",
+          "name": "seed_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "seed_mode"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "label": "camera_motion",
+          "name": "camera_motion",
+          "type": "COMBO",
+          "widget": {
+            "name": "camera_motion"
+          },
+          "link": null
+        },
+        {
+          "label": "audio",
+          "name": "audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "audio"
+          },
+          "link": null
+        },
+        {
+          "label": "negative_prompt",
+          "name": "negative_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "audio_path",
+          "name": "audio_path",
+          "type": "STRING",
+          "widget": {
+            "name": "audio_path"
+          },
+          "link": null
+        },
+        {
+          "label": "inference_steps",
+          "name": "inference_steps",
+          "type": "INT",
+          "widget": {
+            "name": "inference_steps"
+          },
+          "link": null
+        },
+        {
+          "label": "lora_path",
+          "name": "lora_path",
+          "type": "STRING",
+          "widget": {
+            "name": "lora_path"
+          },
+          "link": null
+        },
+        {
+          "label": "lora_strength",
+          "name": "lora_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "lora_strength"
+          },
+          "link": null
+        },
+        {
+          "label": "model_path",
+          "name": "model_path",
+          "type": "STRING",
+          "widget": {
+            "name": "model_path"
+          },
+          "link": null
+        },
+        {
+          "label": "keyframe_strengths",
+          "name": "keyframe_strengths",
+          "type": "STRING",
+          "widget": {
+            "name": "keyframe_strengths"
+          },
+          "link": null
+        },
+        {
+          "label": "keyframe_times",
+          "name": "keyframe_times",
+          "type": "STRING",
+          "widget": {
+            "name": "keyframe_times"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "video_path",
+          "name": "video_path",
+          "type": "STRING",
+          "links": [
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopGenerateVideo"
+      },
+      "widgets_values": [
+        "猫咪播报员闭着眼睛播报新闻",
+        "720p (720P 标准)",
+        "16:9 (横屏)",
+        10,
+        "24",
+        "fixed (固定种子)",
+        260817412,
+        "randomize",
+        "static (静止机位)",
+        true,
+        "low quality, blurry, noisy, static noise, distorted",
+        "",
+        8,
+        "",
+        1,
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      65,
+      47,
+      0,
+      46,
+      0,
+      "AUDIO"
+    ],
+    [
+      66,
+      51,
+      0,
+      47,
+      0,
+      "AUDIO"
+    ],
+    [
+      67,
+      49,
+      0,
+      47,
+      1,
+      "AUDIO"
+    ],
+    [
+      68,
+      58,
+      0,
+      48,
+      1,
+      "STRING"
+    ],
+    [
+      69,
+      47,
+      0,
+      50,
+      0,
+      "AUDIO"
+    ],
+    [
+      70,
+      55,
+      0,
+      51,
+      0,
+      "AUDIO"
+    ],
+    [
+      71,
+      48,
+      0,
+      51,
+      1,
+      "AUDIO"
+    ],
+    [
+      72,
+      61,
+      0,
+      54,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      73,
+      61,
+      0,
+      59,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      74,
+      57,
+      0,
+      59,
+      1,
+      "IMAGE"
+    ],
+    [
+      75,
+      47,
+      0,
+      59,
+      4,
+      "AUDIO"
+    ],
+    [
+      76,
+      54,
+      0,
+      60,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      77,
+      59,
+      0,
+      60,
+      1,
+      "STRING"
+    ],
+    [
+      78,
+      56,
+      0,
+      61,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "方汤圆-LTX桌面桥接插件（基于大雄开源插件）V1  2026.04.09",
+      "bounding": [
+        -525.6547912418821,
+        -531.3054642308998,
+        2236.345665970928,
+        142.4633608890863
+      ],
+      "color": "#00fffb",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "QwenTTS数字人I2V模板工作流",
+      "bounding": [
+        -271.72045130325364,
+        -340.69259478097285,
+        2153.5209776362003,
+        218.7145628567282
+      ],
+      "color": "#00fffb",
+      "font_size": 150,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "用前必读",
+      "bounding": [
+        1298.3105205536222,
+        -6.84960522275337,
+        658.9135198102779,
+        786.7476842330113
+      ],
+      "color": "#00fffb",
+      "font_size": 150,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "TTS自动旁白",
+      "bounding": [
+        -400.00387574474627,
+        639.7953449123672,
+        1119.2691489054698,
+        986.5791920029682
+      ],
+      "color": "#a1309b",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "放图",
+      "bounding": [
+        -403.3115895582776,
+        -70.08835182819789,
+        660.2999008228655,
+        690.0321199511563
+      ],
+      "color": "#00ff4c",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 0.1865696732583613,
+      "offset": [
+        3564.8109652159974,
+        1968.0700927471946
+      ]
+    },
+    "frontendVersion": "1.41.21",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

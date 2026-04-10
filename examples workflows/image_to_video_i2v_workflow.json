@@ -1,0 +1,1082 @@
+{
+  "id": "408a963f-d7c1-40ca-b65d-ead57ba3fa0e",
+  "revision": 0,
+  "last_node_id": 68,
+  "last_link_id": 90,
+  "nodes": [
+    {
+      "id": 39,
+      "type": "Note",
+      "pos": [
+        1342.4513818055477,
+        507.269899206148
+      ],
+      "size": [
+        550.7104057729439,
+        221.73219243000534
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Before running this workflow, make sure your local LTX Desktop backend already works.\n\nThis plugin is a bridge layer only. It does not install or replace the desktop application."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        -533.4248451687088,
+        -636.7332089133942
+      ],
+      "size": [
+        2786.035030469104,
+        88
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "免费开源，禁止倒卖。\nFree and open-source. Do not resell."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 38,
+      "type": "Note",
+      "pos": [
+        1341.2392490669797,
+        254.83796864147055
+      ],
+      "size": [
+        551.7708389368386,
+        194.1609301687471
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "运行工作流前必须自己跑通大雄的LTX桌面端视频插件，未跑通也用不了我的插件。\n\n【12G显存可用，LTX2.3免费开源AI视频软件，支持LoRA、首尾帧、智能多帧、对口型、图生视频、文生视频，一键安装运行】 https://www.bilibili.com/video/BV1MLSUB3EZx/\n\n【LTX多功能AI视频生成软件，生成速度是ComfyUI的5倍，无时长限制，集成首尾帧、文生视频、图生视频、参考音频对口型等功能，AI编程插件，一键运行】 https://www.bilibili.com/video/BV1P3XSBCEPy/"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 52,
+      "type": "Note",
+      "pos": [
+        -501.93711953476316,
+        295.2134818586051
+      ],
+      "size": [
+        495.25525612404545,
+        190.31759554115047
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "基础设置（必填）：\nlauncher_root 填写 LTX Desktop 的 run.bat 所在路径，例如：\nD:/LTX2.3-1.0.4\n也可以先留空，手动启动桌面端\n\nauto_start 打开才能自动运行桌面端\n\n简单理解（不需修改）：\n\nhealth_timeout_s = 等桌面端启动/连通的耐心值\nrequest_timeout_s = 等一次生成任务完成的耐心值\n它们不会改变画质、显存策略或生成效果，只控制“等多久才算超时”。\n\nPublic example:\nLeave `launcher_root` empty if you start LTX Desktop manually.\nEnable `auto_start` only when you want ComfyUI to launch it for you."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 53,
+      "type": "Note",
+      "pos": [
+        31.82485169035113,
+        193.14728469585893
+      ],
+      "size": [
+        315.4534871170986,
+        171.73985817897096
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "可用最高显存上限 (GB, 0为全开优先显存)\n0 = 全开、偏性能\n正数 = 限额、偏省显存\n\napply_now：意思是“现在立刻下发到桌面端生效”。你想马上改当前运行环境，就开 true\n\nlow_vram_mode：开启低显存模式以最低显存运行，直接覆盖上面显存输入的限制参数。\n\nVRAM note:\n`vram_limit_gb = 0` means unlimited prefetch.\n`low_vram_mode = true` takes priority over the numeric limit."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 61,
+      "type": "TYLTXDesktopSetVramLimit",
+      "pos": [
+        33.719086981955805,
+        -7.407520899600419
+      ],
+      "size": [
+        312.5455078125,
+        146
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 78
+        },
+        {
+          "label": "vram_limit_gb",
+          "name": "vram_limit_gb",
+          "type": "STRING",
+          "widget": {
+            "name": "vram_limit_gb"
+          },
+          "link": null
+        },
+        {
+          "label": "apply_now",
+          "name": "apply_now",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "apply_now"
+          },
+          "link": null
+        },
+        {
+          "label": "low_vram_mode",
+          "name": "low_vram_mode",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "low_vram_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "links": [
+            72,
+            86,
+            89
+          ]
+        },
+        {
+          "label": "vram_limit_gb",
+          "name": "vram_limit_gb",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "label": "status_json",
+          "name": "status_json",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopSetVramLimit",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "0",
+        true,
+        true
+      ]
+    },
+    {
+      "id": 56,
+      "type": "TYLTXDesktopConfig",
+      "pos": [
+        -509.90569364498083,
+        -9.95776717793649
+      ],
+      "size": [
+        505.95611295414585,
+        250
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "base_url",
+          "name": "base_url",
+          "type": "STRING",
+          "widget": {
+            "name": "base_url"
+          },
+          "link": null
+        },
+        {
+          "label": "launcher_root",
+          "name": "launcher_root",
+          "type": "STRING",
+          "widget": {
+            "name": "launcher_root"
+          },
+          "link": null
+        },
+        {
+          "label": "auto_start",
+          "name": "auto_start",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "auto_start"
+          },
+          "link": null
+        },
+        {
+          "label": "output_dir",
+          "name": "output_dir",
+          "type": "STRING",
+          "widget": {
+            "name": "output_dir"
+          },
+          "link": null
+        },
+        {
+          "label": "gpu_id",
+          "name": "gpu_id",
+          "type": "INT",
+          "widget": {
+            "name": "gpu_id"
+          },
+          "link": null
+        },
+        {
+          "label": "clear_gpu_before_run",
+          "name": "clear_gpu_before_run",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "clear_gpu_before_run"
+          },
+          "link": null
+        },
+        {
+          "label": "low_vram_mode",
+          "name": "low_vram_mode",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "low_vram_mode"
+          },
+          "link": null
+        },
+        {
+          "label": "health_timeout_s",
+          "name": "health_timeout_s",
+          "type": "INT",
+          "widget": {
+            "name": "health_timeout_s"
+          },
+          "link": null
+        },
+        {
+          "label": "request_timeout_s",
+          "name": "request_timeout_s",
+          "type": "INT",
+          "widget": {
+            "name": "request_timeout_s"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "links": [
+            78
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopConfig",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "http://127.0.0.1:3000",
+        "",
+        true,
+        "",
+        -1,
+        false,
+        false,
+        60,
+        1800
+      ]
+    },
+    {
+      "id": 62,
+      "type": "TYLTXDesktopGenerateImage",
+      "pos": [
+        -428.3791853230953,
+        537.0214511887119
+      ],
+      "size": [
+        400,
+        324
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 89
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "aspect_ratio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "label": "long_edge",
+          "name": "long_edge",
+          "type": "INT",
+          "widget": {
+            "name": "long_edge"
+          },
+          "link": null
+        },
+        {
+          "label": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "label": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "label": "num_steps",
+          "name": "num_steps",
+          "type": "INT",
+          "widget": {
+            "name": "num_steps"
+          },
+          "link": null
+        },
+        {
+          "label": "num_images",
+          "name": "num_images",
+          "type": "INT",
+          "widget": {
+            "name": "num_images"
+          },
+          "link": null
+        },
+        {
+          "label": "seed_mode",
+          "name": "seed_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "seed_mode"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            84,
+            90
+          ]
+        },
+        {
+          "label": "image_paths_json",
+          "name": "image_paths_json",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopGenerateImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "带着宝石项链和耳饰的女模特，中国18岁女孩拥有曼妙的身姿，半身像。",
+        "9:16 (竖屏)",
+        2048,
+        1024,
+        1024,
+        28,
+        1,
+        "fixed (固定种子)",
+        509461176,
+        "randomize"
+      ]
+    },
+    {
+      "id": 67,
+      "type": "SaveImage",
+      "pos": [
+        48.06828628744441,
+        461.65532435804363
+      ],
+      "size": [
+        270,
+        270
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 90
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.2",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 54,
+      "type": "TYLTXDesktopClearGPU",
+      "pos": [
+        417.39903623393246,
+        -4.0195336542077165
+      ],
+      "size": [
+        343.68547768783856,
+        46
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "links": [
+            87
+          ]
+        },
+        {
+          "label": "status_json",
+          "name": "status_json",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopClearGPU",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 68,
+      "type": "Note",
+      "pos": [
+        -8.996508402528761,
+        778.5166643107331
+      ],
+      "size": [
+        343.8786211578831,
+        88
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "桌面版 Z-Image 原生生图模块，可自行换为其他生图节点接入视频节点。\n\nThis example first generates an image, then sends it into Generate Video."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 65,
+      "type": "TYLTXDesktopGenerateVideo",
+      "pos": [
+        412.0627211259929,
+        202.74853970880645
+      ],
+      "size": [
+        313.2623046875,
+        626
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 86
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 84
+        },
+        {
+          "label": "start_frame",
+          "name": "start_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "end_frame",
+          "name": "end_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "ref_audio",
+          "name": "ref_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "label": "keyframe_images",
+          "name": "keyframe_images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "resolution",
+          "name": "resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "label": "aspect_ratio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "label": "duration",
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": null
+        },
+        {
+          "label": "fps",
+          "name": "fps",
+          "type": "COMBO",
+          "widget": {
+            "name": "fps"
+          },
+          "link": null
+        },
+        {
+          "label": "seed_mode",
+          "name": "seed_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "seed_mode"
+          },
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "label": "camera_motion",
+          "name": "camera_motion",
+          "type": "COMBO",
+          "widget": {
+            "name": "camera_motion"
+          },
+          "link": null
+        },
+        {
+          "label": "audio",
+          "name": "audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "audio"
+          },
+          "link": null
+        },
+        {
+          "label": "negative_prompt",
+          "name": "negative_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": null
+        },
+        {
+          "label": "audio_path",
+          "name": "audio_path",
+          "type": "STRING",
+          "widget": {
+            "name": "audio_path"
+          },
+          "link": null
+        },
+        {
+          "label": "inference_steps",
+          "name": "inference_steps",
+          "type": "INT",
+          "widget": {
+            "name": "inference_steps"
+          },
+          "link": null
+        },
+        {
+          "label": "lora_path",
+          "name": "lora_path",
+          "type": "STRING",
+          "widget": {
+            "name": "lora_path"
+          },
+          "link": null
+        },
+        {
+          "label": "lora_strength",
+          "name": "lora_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "lora_strength"
+          },
+          "link": null
+        },
+        {
+          "label": "model_path",
+          "name": "model_path",
+          "type": "STRING",
+          "widget": {
+            "name": "model_path"
+          },
+          "link": null
+        },
+        {
+          "label": "keyframe_strengths",
+          "name": "keyframe_strengths",
+          "type": "STRING",
+          "widget": {
+            "name": "keyframe_strengths"
+          },
+          "link": null
+        },
+        {
+          "label": "keyframe_times",
+          "name": "keyframe_times",
+          "type": "STRING",
+          "widget": {
+            "name": "keyframe_times"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "video_path",
+          "name": "video_path",
+          "type": "STRING",
+          "links": [
+            82
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopGenerateVideo",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "模特展示她漂亮的耳环首饰",
+        "720p (720P 标准)",
+        "9:16 (竖屏)",
+        5,
+        "24",
+        "fixed (固定种子)",
+        172069353,
+        "randomize",
+        "static (静止机位)",
+        true,
+        "low quality, blurry, noisy, static noise, distorted",
+        "",
+        8,
+        "",
+        1,
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 64,
+      "type": "TYLTXDesktopSaveVideo",
+      "pos": [
+        843.4877111374011,
+        84.6254784160481
+      ],
+      "size": [
+        360,
+        752.5454545454545
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "config",
+          "name": "config",
+          "type": "LTX_DESKTOP_CONFIG",
+          "link": 87
+        },
+        {
+          "label": "video_path",
+          "name": "video_path",
+          "type": "STRING",
+          "widget": {
+            "name": "video_path"
+          },
+          "link": 82
+        },
+        {
+          "label": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "label": "target_dir",
+          "name": "target_dir",
+          "type": "STRING",
+          "widget": {
+            "name": "target_dir"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "saved_video_path",
+          "name": "saved_video_path",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "supart/ComfyUI_TY_LTX_Desktop_Bridge",
+        "ver": "6ed282dca878410cdb703d0b608157cf83469516",
+        "Node name for S&R": "TYLTXDesktopSaveVideo",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "video_path": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "image_to_video_i2v",
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      72,
+      61,
+      0,
+      54,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      78,
+      56,
+      0,
+      61,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      82,
+      65,
+      0,
+      64,
+      1,
+      "STRING"
+    ],
+    [
+      84,
+      62,
+      0,
+      65,
+      1,
+      "IMAGE"
+    ],
+    [
+      86,
+      61,
+      0,
+      65,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      87,
+      54,
+      0,
+      64,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      89,
+      61,
+      0,
+      62,
+      0,
+      "LTX_DESKTOP_CONFIG"
+    ],
+    [
+      90,
+      62,
+      0,
+      67,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "方汤圆-LTX桌面桥接插件（基于大雄开源插件）V1  2026.04.09",
+      "bounding": [
+        -525.6547912418821,
+        -531.3054642308998,
+        2236.345665970928,
+        142.4633608890863
+      ],
+      "color": "#00fffb",
+      "font_size": 100,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "生图转视频I2V模板工作流",
+      "bounding": [
+        -271.72045130325364,
+        -340.69259478097285,
+        1771.021674986276,
+        210.24594360986634
+      ],
+      "color": "#00fffb",
+      "font_size": 150,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "用前必读",
+      "bounding": [
+        1298.3105205536222,
+        -6.84960522275337,
+        658.9135198102779,
+        786.7476842330113
+      ],
+      "color": "#00fffb",
+      "font_size": 150,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 0.24832423510688023,
+      "offset": [
+        633.4248451687088,
+        736.7332089133942
+      ]
+    },
+    "frontendVersion": "1.41.21",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
